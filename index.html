@@ -1,80 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
-    <title>Input Output</title>
-  </head>
-  <body>
-    
-    <div class="container">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Web Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-      <!-- Part 1 -->
-      <div class="section">
-        <h1>What's Your Favorite Color?</h1>
-        
-        <legend>Pick a color!</legend>
-        <form id="fav_color" action="#">
-          <input type="radio" id="blue" name="fav_color" value="blue">
-          <label for="blue">Blue</label>
-          <input type="radio" id="green" name="fav_color" value="green">
-          <label for="green">Green</label>
-          <input type="radio" id="pink" name="fav_color" value="pink">
-          <label for="pink">Pink</label>
-          <input type="radio" id="black" name="fav_color" value="black">
-          <label for="black">Black</label>
-        </form>
-        <div id="radio-output">YOUR RADIO OUTPUT HERE</div>
-      </div>
+  <!-- Section 1: Favorite Color -->
+<div class="section">
+  <h1>Select Your Favorite Color</h1>
+  <label><input type="radio" name="fav_color" value="blue"> Blue</label>
+  <label><input type="radio" name="fav_color" value="green"> Green</label>
+  <label><input type="radio" name="fav_color" value="pink"> Pink</label>
+  <label><input type="radio" name="fav_color" value="black"> Black</label>
+  <div id="radio-output" aria-live="polite" class="sr-only"></div>
+</div>
 
-      <!-- Part 2 -->
-      <div class="section">
-        <h1>Guess the Number (1 to 100)</h1>
-        <input id="num-input" class="input" type="number">
-        <h2 id="num-output">YOUR GUESSING GAME OUTPUT HERE</h2>
-      </div>
 
-      <!-- Part 3 -->
-      <div class="section">
-        <h1>Name All 7 Continents</h1>
-        <input id="text-input" class="input" type="text">
-        <div id="text-output">
-          <div class="row">
-            <img id="north-america" src="img/na.png" alt="North America">
-            <img id="europe" src="img/eu.png" alt="Europe">
-            <img id="asia" src="img/as.png" alt="Asia">
-            <img id="south-america" src="img/sa.png" alt="South America">
-          </div>
-          <div class="row" aria-live="polite" aria-atomic="true">
-            <img id="africa" src="img/af.jpg" alt="Africa">
-            <img id="australia" src="img/au.png" alt="Australia">
-            <img id="antarctica" src="img/ar.jpg" alt="Antarctica">
-          </div>
-        </div>
-        
-        <div id="sr-continent-alert">YOUR CONTINENT OUTPUT HERE</div>
-      </div>
+  <!-- Section 2: Number Guessing Game -->
+  <div class="section">
+    <h1>Guess the Number (1 to 100)</h1>
+    <input id="num-input" class="input" type="number" placeholder="Enter a number">
+    <div id="num-output" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+  </div>
 
-      <!-- Part 4 -->
-      <div class="section">
-        <h1>Change the Background Color</h1>
-        <form id="back_color" action="#">
-          <legend class="hidden">Pick a color!</legend>
-          <input type="color" id="color" name="background_color" value="#FFFEEE">
-          <div id="robot-validation">
-            <input type="checkbox" id="human" name="is_human">
-            <label for="human">I'm not a Robot <p id="red">*</p></label>
-          </div>
-          <input type="submit" id="submit" value="Change Background">
-        </form>
-      </div>
-      
+  <!-- Section 3: Name All 7 Continents -->
+  <div class="section">
+    <h1>Name All 7 Continents</h1>
+    <input id="text-input" class="input" type="text" placeholder="Type a continent name">
+    <div id="continent-images">
+      <img id="north-america" src="img/na.png" alt="North America" class="hidden">
+      <img id="europe" src="img/eu.png" alt="Europe" class="hidden">
+      <img id="asia" src="img/as.png" alt="Asia" class="hidden">
+      <img id="south-america" src="img/sa.png" alt="South America" class="hidden">
+      <img id="africa" src="img/af.jpg" alt="Africa" class="hidden">
+      <img id="australia" src="img/au.png" alt="Australia" class="hidden">
+      <img id="antarctica" src="img/ar.jpg" alt="Antarctica" class="hidden">
     </div>
-    
+    <div id="sr-continent-alert" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+  </div>
 
-    <script src="utils.js"></script>
-    <script src="script.js"></script>
-  </body>
+  <!-- Section 4: Background Color Changer -->
+<div class="section">
+  <h1>Change Background Color</h1>
+  <input id="color-input" class="input" type="color">
+  <label><input id="robot-check" type="checkbox"> I'm not a robot</label>
+  <button id="change-bg-btn">Change Background</button>
+  <div id="bg-change-output" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+</div>
+
+  <script src="script.js"></script>
+</body>
 </html>
